@@ -1,0 +1,495 @@
+html body {
+  background-color: #212635;
+  color: #90a1bb; }
+  html body .finance-modal__col.empty .finance-modal__item .finance-modal__content--txt {
+    color: #90a1bb; }
+  html body .finance-modal {
+    background-color: #2b3144; }
+  html body .offer-tabs-btn.active,
+  html body .nav-tabs > li:not(.addon).active > a, html body .nav-tabs > li.active > a {
+    background: #2b3144 !important; }
+  html body .dropdown-menu {
+    border-color: #464D64;
+    background-color: #23293D;
+    color: #FFF; }
+    html body .dropdown-menu li:hover,
+    html body .dropdown-menu a:hover {
+      background-color: #90a1bb;
+      color: #FFF; }
+  html body .btn-default {
+    border-color: #464D64;
+    background-color: #23293D;
+    color: #FFF; }
+  html body .btn-default.dropdown-toggle,
+  html body .btn-default:hover, html body .btn-default:focus, html body .btn-default.focus, html body .btn-default:active, html body .btn-default.active, html body .open > .btn-default.dropdown-toggle {
+    border-color: #172231 !important;
+    background-color: #172231;
+    color: #FFF; }
+  html body .form-group .vue-datepicker.form-control,
+  html body .chosen-container-single .chosen-single,
+  html body .chosen-container-multi .chosen-choices,
+  html body .nice-select,
+  html body .telegram-link,
+  html body .quote,
+  html body .form-control {
+    border-color: #464D64;
+    background-color: #23293D;
+    color: #FFF; }
+    html body .form-group .vue-datepicker.form-control::placeholder,
+    html body .chosen-container-single .chosen-single::placeholder,
+    html body .chosen-container-multi .chosen-choices::placeholder,
+    html body .nice-select::placeholder,
+    html body .telegram-link::placeholder,
+    html body .quote::placeholder,
+    html body .form-control::placeholder {
+      color: #90a1bb; }
+  html body .chosen-container-single .chosen-single span {
+    color: #90a1bb; }
+  html body .quote p,
+  html body .quote {
+    background-color: #3a4055;
+    color: #90a1bb; }
+  html body .code {
+    border: 1px solid #464D64;
+    background-color: #303546;
+    color: #90a1bb; }
+  html body .chosen-container .chosen-drop {
+    border-color: #464D64;
+    background-color: #23293D; }
+  html body .form-control[disabled], html body .form-control[readonly], html body fieldset[disabled] .form-control {
+    background-color: #464D64;
+    border-color: #464D64 !important; }
+  html body .file-input .file-label {
+    border-color: #464D64; }
+  html body .css-checkbox input + span {
+    background: #23293D;
+    border: 1px solid #464D64; }
+  html body .css-checkbox input + span:after {
+    color: #23293D !important; }
+  html body .css-checkbox input:checked + span:after {
+    color: #FFF !important; }
+  html body .app-layout-content {
+    background-color: #212635; }
+  html body .pagination > .disabled > span, html body .pagination > .disabled > span:hover,
+  html body .pagination > li > a:hover, html body .pagination > li > a:focus, html body .pagination > li > span:hover, html body .pagination > li > span:focus {
+    background-color: #030406; }
+  html body .card.postback-templates .card-header + .card-block .row .col-12:before,
+  html body .card.postback-templates .card-header + .card-block .row .col-12 .card.card-grey.card-rounded {
+    background-color: #2b3144 !important; }
+  html body .card.page-title .card-header {
+    border-bottom-color: transparent !important; }
+  html body .tabs-container .tabs-nav .back-btn,
+  html body .modal-inner .fancybox-button,
+  html body .voting__top-right,
+  html body .telegram__connections,
+  html body .instructions__aside-title,
+  html body .instructions__content,
+  html body .modal-inner__wrap,
+  html body .instructions__aside-wrap,
+  html body .pagination > .disabled > span,
+  html body .news-block__hidden,
+  html body .news-block__slider,
+  html body .side-nav li,
+  html body .pagination > li > a, html body .pagination > li > span,
+  html body .pagination > li:first-child > a, html body .pagination > li:first-child > span,
+  html body .card:not([class*="bg-"]),
+  html body .offers-block__overlay,
+  html body .news-block__item,
+  html body .offers-block__item,
+  html body .info-block__item,
+  html body .site-nav .notifications__listm,
+  html body .offer-tabs__connect-add-item,
+  html body .table-white,
+  html body .side-nav,
+  html body .site-nav {
+    background-color: #2b3144; }
+  html body .instructions__aside-wrap {
+    background: #2b3144; }
+  html body .offers-block__caption li span,
+  html body .info-block__select .select2-container--default .select2-selection--single,
+  html body .site-nav__header .site-nav--button,
+  html body .menu-item.active,
+  html body .table tbody,
+  html body .card-traffic,
+  html body .menu-item {
+    background-color: transparent; }
+  html body .offer-tabs-nav,
+  html body .nav-tabs li:not(.addon) a,
+  html body .number-label,
+  html body .offer-graph-empty-wrapper,
+  html body .offer__card-tariffs-item,
+  html body .homescreen__close,
+  html body .finance-modal__content--txt,
+  html body .tabs-container .tabs-nav--justified .nav-tabs li a,
+  html body .nav-tabs li:not(.addon) a, html body .number-label, html body .homescreen__close, html body .reaction-btn, html body .button.button-inline, html body .instructions__item-answer ol li:before, html body .site-nav--notifications-btn,
+  html body .reaction-btn,
+  html body .bank-details--edit .alert.alert-new,
+  html body .button.button-icon-inline .button-icon-inline--img,
+  html body .button.button-inline,
+  html body .instructions__item-answer ol li:before,
+  html body .site-nav--notifications-btn {
+    background-color: #3a4055; }
+  html body .info-item .info-item-delimiter {
+    background-color: #172231; }
+  html body .offers-block__img,
+  html body .site-nav__header .site-nav--button__menu span {
+    background-color: #FFF; }
+  html body .homescreen {
+    background: linear-gradient(180deg, #2b3144 0, #2b3144 31.02%, #2b3144 66.15%, #2b3144 80.06%, #2b3144 100%); }
+  html body .site-nav__footer .site-nav--button {
+    background-color: #212635; }
+  html body .simplebar-scrollbar:before,
+  html body .news-block__scroll .simplebar-scrollbar::before {
+    background-color: #3a4055; }
+  html body .cabinet-page--nav .nav-tabs li {
+    float: none; }
+  html body .offer__card-content-right:before,
+  html body .info-item .info-item-delimiter,
+  html body .offer-inner__top-right:before {
+    background: #172231; }
+  html body .page-title--finance__info .info-item.one-line.row-flex,
+  html body .page-title--finance__info,
+  html body .card-row > .payment-option + .payment-option,
+  html body .card-row,
+  html body .card-header,
+  html body .table-responsive,
+  html body .table > tbody > tr > td,
+  html body .offer-inner__top-left,
+  html body .offer__card-content .text-info-item,
+  html body .offers__card-hints,
+  html body .cabinet-page--nav .nav-tabs li + li,
+  html body .tutorial__item,
+  html body .utm-block,
+  html body .card.table-block .card-block + .card-block,
+  html body .tabs-container .tabs-nav--justified .nav-tabs,
+  html body .page-inner > .card .card,
+  html body .b-b,
+  html body pre.dark,
+  html body .card.table-block .table-block__info .row > * + *,
+  html body .modal-inner .card-header,
+  html body .button.button-icon-inline .button-icon-inline--img,
+  html body .tabs-container .tabs-nav--justified .nav-tabs li,
+  html body .nav-tabs li:not(.addon) a, html body .number-label, html body .homescreen__close, html body .reaction-btn, html body .button.button-inline, html body .instructions__item-answer ol li:before, html body .site-nav--notifications-btn,
+  html body .side-nav li,
+  html body .table thead tr,
+  html body .table tbody tr,
+  html body .instructions__aside-wrap ul li,
+  html body .instructions__item-question,
+  html body .instructions__aside-wrap ul > * + *,
+  html body .offers-block__wrap,
+  html body .news-block__item:last-child .news-block__heading,
+  html body .news-block__hidden,
+  html body .news-block__front,
+  html body .news-block__card-link,
+  html body .offer-tabs__info-item-title,
+  html body .offer-tabs__info-item-icon,
+  html body .offers-block__footer,
+  html body .info-block__chart,
+  html body .site-nav__balance,
+  html body .button.button-inline,
+  html body .reaction-btn,
+  html body .site-nav__header {
+    border-color: #172231 !important; }
+  html body .site-nav--notifications-btn i {
+    color: #79bc41; }
+  html body .telegram__title,
+  html body .number-label,
+  html body .nav-tabs > li:not(.addon).active > a,
+  html body .nav-tabs > li.active > a,
+  html body .offers-block__price,
+  html body .news-block__subtitle,
+  html body .news-block__name,
+  html body .news-block__title,
+  html body .offer__card-content-right-title,
+  html body .offers-block__footer,
+  html body .offers-block__caption li.active,
+  html body .info-block__title span,
+  html body .info-block__price,
+  html body .info-block__title,
+  html body .homescreen__close,
+  html body .homescreen__greeting,
+  html body .offers-block__title,
+  html body .instructions__item-question,
+  html body .table-e .table-title,
+  html body .section-title,
+  html body .voting__item-rating,
+  html body .voting__item-link,
+  html body .telegram__connections-title,
+  html body .menu-item.active .site-nav--link__text,
+  html body .site-nav__footer .site-nav--button:not(:hover) .site-nav--button__icon,
+  html body .site-nav__footer .site-nav--button:not(:hover) .site-nav--button__text,
+  html body .site-nav__balance .info-text,
+  html body .site-nav--link:hover .site-nav--link__text,
+  html body .form-group label,
+  html body .offer__card-title a,
+  html body .table-title,
+  html body .offer__card-tariffs-title,
+  html body .text-info-item-text,
+  html body .table-resp-tlg tbody tr td:not(:first-child):before,
+  html body .table tbody tr td,
+  html body .table thead tr th,
+  html body .offer__card-tariffs-item,
+  html body .telegram-link .telegram-link__text,
+  html body .telegram-link__text,
+  html body .modal-inner .fancybox-button,
+  html body .card-title,
+  html body div.info-item.one-line span,
+  html body .side-nav li a.current,
+  html body .card.table-block .table-block__info .info-item .info-text b i,
+  html body .info-item.two-line .info-text,
+  html body .offer-tabs__connect-add-item-left,
+  html body .table h2, html body .table, html body h3, html body .table h2, html body .table h6, html body .table h4, html body .table h5,
+  html body .tabs-container .tabs-nav .back-btn .back-btn__txt,
+  html body .chosen-container .chosen-results li,
+  html body code,
+  html body .info-item .info-text,
+  html body .card.page-title .card-header .card-title,
+  html body .card-header h1,
+  html body .card-header h2,
+  html body .card-header h3,
+  html body .card-header h4,
+  html body .card-header h5,
+  html body .card-header h6,
+  html body .card.page-title .card-header small,
+  html body xmp,
+  html body .bank-details--edit .alert.alert-new .alert-text,
+  html body .anchor-nav .nav a,
+  html body .table-check--text,
+  html body .site-nav__menu > li.current .site-nav--link__text {
+    color: #fff !important; }
+  html body .table-resp-default tbody tr td:before,
+  html body .bank-details--edit .alert.alert-new p,
+  html body .nav-tabs > li > a i,
+  html body .info-item.two-line .info-label,
+  html body .side-nav li a,
+  html body .finance-modal__content--txt,
+  html body .offer-tabs__info-item-text ul li,
+  html body .offer-tabs__info-item-text,
+  html body .offer__card-text,
+  html body .text-info-item-label,
+  html body .file-input .file-label--wrap,
+  html body .css-checkbox,
+  html body .voting__item-link i,
+  html body .voting__item-rating i,
+  html body .tutorial__text p,
+  html body .instructions__item-answer-content > ul li,
+  html body .instructions__item-answer p,
+  html body .card.card-alert .card-block p,
+  html body .pagination > .disabled > span,
+  html body .nav-tabs li:not(.addon) a,
+  html body .file-input .file-label--wrap,
+  html body .instructions__aside-wrap ul a,
+  html body .text-muted,
+  html body .chosen-container-multi .chosen-choices li.search-field input[type="text"],
+  html body .offers-block__note,
+  html body .offer-inner__top-wrap-text,
+  html body .offers-block__info,
+  html body .news-block__front-txt,
+  html body .button.button-inline,
+  html body .news-block__note-text,
+  html body .offers-block__text,
+  html body .section-title small,
+  html body .voting__item-quote,
+  html body .info-block__note,
+  html body .help-block,
+  html body .card-traffic h6,
+  html body .voting__top-faq-question,
+  html body .voting__top .section-title small,
+  html body .instructions__aside-title,
+  html body .info-block__chart,
+  html body .list-blue li,
+  html body .homescreen__text p,
+  html body .menu-item--list ul li a,
+  html body .page-preview__bottom .card-block,
+  html body .dropdown-menu > li > a,
+  html body .text-gray,
+  html body .text-block p,
+  html body .card-traffic,
+  html body .button.button-inline > *,
+  html body .list-green ul li,
+  html body .telegram__connections-item-empty,
+  html body .offer-tabs__info-traffic-btn button,
+  html body .nav-tabs li:not(.addon) a, html body .number-label, html body .homescreen__close, html body .reaction-btn, html body .button.button-inline, html body .instructions__item-answer ol li:before, html body .site-nav--notifications-btn,
+  html body .button.button-icon-inline .button-text,
+  html body .page-inner > .card .card-block p,
+  html body .card-rounded .card-block p,
+  html body .page-inner > .card .card-header small,
+  html body .finance-status--txt,
+  html body .site-nav--link__text {
+    color: #90a1bb; }
+  html body .file-input .file-label--wrap .svg-mask-icon.color-black {
+    background-color: #90a1bb; }
+  html body .site-nav__balance .ion-ios-arrow-forward,
+  html body .site-nav__balance .info-label {
+    color: #A2B3CC; }
+  html body .news-block__heading a {
+    color: #58a5ec; }
+  html body .telegram__connections-title:before {
+    background-image: url("/img/telegram/connection-icon-white.svg"); }
+  html body .menu-item.active .menu-item--title:before {
+    background-image: url("/img/site-nav/minus-white.svg"); }
+  html body .menu-item--title:before {
+    background-image: url("/img/site-nav/plus-white.svg"); }
+  html body .offers-block__item {
+    padding-top: 0; }
+  html body .offers-block__img {
+    border-radius: 3px;
+    height: 103px; }
+  html body .move-link:not(:hover) {
+    background: #7dc855;
+    color: #FFF;
+    border-color: #7dc855; }
+  html body .select2-container--default .select2-selection--single .select2-selection__rendered,
+  html body .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #90a1bb; }
+  html body .select2-container--default .select2-selection--single {
+    background: #23293D;
+    border: 1px solid #464D64; }
+  html body .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #85C84D  transparent transparent transparent; }
+  html body .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #85C84D transparent; }
+  html body .select2-container .select2-dropdown {
+    border-color: #464D64; }
+  html body .select2-container--default .select2-search--dropdown .select2-search__field {
+    border-color: #464D64;
+    background: #23293D; }
+  html body .select2-container .select2-dropdown {
+    background: #23293D; }
+  html body .nice-select {
+    color: #90A1BB;
+    background: #23293D;
+    border: 1px solid #464D64; }
+    html body .nice-select .current {
+      color: #90A1BB; }
+    html body .nice-select .list {
+      color: #90A1BB;
+      background: #23293D; }
+  html body .nice-select .option.focus, html body .nice-select .option.selected.focus, html body .nice-select .option:hover {
+    background-color: #2b3144; }
+  html body .tags-wrap span, html body .tags-wrap a {
+    background-color: #3a4055;
+    color: #FFF;
+    border-color: #3a4055; }
+  html body .offer-tabs-btn,
+  html body .offer-tabs-nav {
+    background: #3a4055 !important; }
+  html body .offer-tabs-btn > span {
+    color: #FFF; }
+  html body .offer-tabs-nav,
+  html body .offer-tabs-nav > * + * {
+    border-color: #172231; }
+  html body .table.table-offers .js-table-sections-header > tr td {
+    background: #3a4055 !important; }
+  html body .input-muted + .addon-transparent {
+    border-color: #464D64;
+    background-color: #23293D; }
+  html body .input-group-addon.addon-transparent .btn {
+    background-color: #7dc855;
+    border-color: #7dc855;
+    color: #FFF; }
+  html body .select2-container--default .select2-search--inline .select2-search__field:placeholder {
+    color: #90A1BB; }
+  html body .select2-container .select2-dropdown {
+    background-color: #23293D;
+    border-color: #464D64; }
+  html body .select2-results__option {
+    color: #90A1BB; }
+  html body .select2-container--default .select2-search--inline .select2-search__field,
+  html body .select2-container--default .select2-selection--multiple, html body .select2-container--default.select2-container--focus .select2-selection--multiple {
+    background-color: #23293D;
+    border-color: #464D64;
+    color: #90A1BB; }
+  html body .datepickers-container .datepicker--pointer {
+    border-color: #172231;
+    background-color: #23293D; }
+  html body .datepickers-container .datepicker {
+    border-color: #172231; }
+  html body .datepickers-container .datepicker--nav-action {
+    border-color: #172231;
+    background-color: #3a4055; }
+  html body .datepickers-container .datepicker--nav {
+    border-color: #172231;
+    background-color: #23293D; }
+  html body .datepickers-container .datepicker--nav-action path {
+    stroke: #FFF; }
+  html body .datepickers-container .datepicker--nav-title,
+  html body .datepickers-container .datepicker--nav-title i {
+    background-color: transparent;
+    color: #FFF; }
+  html body .datepickers-container .datepicker--content {
+    border-color: #172231;
+    background-color: #23293D; }
+  html body .table-check--checkmark {
+    background: #23293D;
+    border: 1px solid #464D64; }
+  html body .card.card-light-orange {
+    background-color: #E7F5E3;
+    color: #626262; }
+    html body .card.card-light-orange .card-header .card-title,
+    html body .card.card-light-orange .card-header h1, html body .card.card-light-orange .card-header h2, html body .card.card-light-orange .card-header h3, html body .card.card-light-orange .card-header h4, html body .card.card-light-orange .card-header h5, html body .card.card-light-orange .card-header h6 {
+      color: #626262 !important; }
+    html body .card.card-light-orange .card-block p {
+      color: #626262 !important; }
+  html body .card-grey {
+    background-color: #3a4055 !important; }
+  html body .nav > li > a:hover {
+    background-color: #3a4055; }
+  html body .page-inner__sort-btn {
+    border-color: #58a5ec;
+    color: #58a5ec; }
+  html body .landing-check__wrap {
+    border-color: #172231; }
+  html body .landing-check input:checked ~ .landing-check__wrap {
+    border-color: #74c85d; }
+  html body .landing-check__txt {
+    color: #FFF; }
+  html body .table-link {
+    color: #58a5ec; }
+  html body .alert {
+    background-color: #3a4055;
+    border-right-color: #3a4055;
+    border-top-color: #3a4055;
+    border-bottom-color: #3a4055;
+    color: #90a1bb; }
+    html body .alert button.close {
+      opacity: 1;
+      text-shadow: none;
+      color: #FFF; }
+  html body .has-error .help-block, html body .has-error .control-label, html body .has-error .radio, html body .has-error .checkbox, html body .has-error .radio-inline, html body .has-error .checkbox-inline, html body .has-error.radio label, html body .has-error.checkbox label, html body .has-error.radio-inline label, html body .has-error.checkbox-inline label {
+    color: #d9534f !important; }
+  html body .button-text-large {
+    color: #FFF; }
+  html body .text-dashed {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5); }
+  html body .input-group-addon.addon-transparent {
+    background-color: #3a4055;
+    border-color: #464D64;
+    color: #90a1bb; }
+
+@media (max-width: 1199px) {
+  .page-inner .card.page-title {
+    border-color: #3a4055; } }
+@media (min-width: 768px) {
+  .instructions__aside {
+    position: relative; }
+    .instructions__aside:after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      position: absolute;
+      background-color: #172231; }
+
+  .instructions__aside-wrap ul a.active {
+    position: relative;
+    z-index: 1; } }
+@media (min-width: 1200px) {
+  .card.cabinet-page--nav {
+    border-right: 1px solid #172231; } }
+@media (max-width: 767px) {
+  .offer-tabs-btn {
+    background: #3a4055 !important;
+    border-top: 1px solid #172231;
+    border-left: none; } }

@@ -1,0 +1,636 @@
+$sapphire-blue:              #212635;
+$sapphire-blue-light:        #2b3144;
+$cobalt-blue:                #172231;
+$grayish-purple-blue:        #3a4055;
+$habrahabra:                 #90a1bb;
+$niagara:                    #A2B3CC;
+$dark-yellow-green:          #79bc41;
+$cornflower-blue:            #58a5ec;
+$green-light:                #74c85d;
+$marengo:                    #464D64;
+$blue:                       #58a5ec;
+html body {
+  background-color: $sapphire-blue;
+  color: $habrahabra;
+
+  .finance-modal__col.empty .finance-modal__item .finance-modal__content--txt {
+    color: $habrahabra
+  }
+  .finance-modal__content--txt {
+
+  }
+  .finance-modal {
+    background-color: $sapphire-blue-light;
+  }
+  .offer-tabs-btn.active,
+  .nav-tabs > li:not(.addon).active > a, .nav-tabs > li.active > a {
+    background: $sapphire-blue-light!important;
+  }
+
+  .dropdown-menu {
+    border-color: $marengo;
+    background-color: #23293D;
+    color: #FFF;
+    li:hover,
+    a:hover   {
+      background-color: #90a1bb;
+      color: #FFF;
+    }
+  }
+  .btn-default {
+    border-color: $marengo;
+    background-color: #23293D;
+    color: #FFF;
+  }
+  .btn-default.dropdown-toggle,
+  .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    border-color: $cobalt-blue!important;
+    background-color: $cobalt-blue;
+    color: #FFF;
+  }
+  .form-group .vue-datepicker.form-control,
+  .chosen-container-single .chosen-single,
+  .chosen-container-multi .chosen-choices,
+  .nice-select,
+  .telegram-link,
+  .quote,
+  .form-control {
+    border-color: $marengo;
+    background-color: #23293D;
+    color: #FFF;
+    &::placeholder {
+      color: $habrahabra;
+    }
+  }
+  .chosen-container-single .chosen-single span {
+    color: $habrahabra;
+
+  }
+  .quote p,
+  .quote {
+    background-color: $grayish-purple-blue;
+    color: $habrahabra;
+  }
+  .code {
+    border: 1px solid $marengo;
+    background-color: darken($grayish-purple-blue,5%);
+    color: $habrahabra;
+  }
+  .chosen-container .chosen-drop {
+    border-color: $marengo;
+    background-color: #23293D;
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color:$marengo;
+    border-color: $marengo!important;
+  }
+  .file-input .file-label {
+    border-color: $marengo;
+  }
+  .css-checkbox input + span {
+    background: #23293D;
+    border: 1px solid #464D64;
+  }
+  .css-checkbox input + span:after {
+    color: #23293D!important;
+  }
+  .css-checkbox input:checked + span:after {
+    color: #FFF!important;
+  }
+  // backgrounds
+
+
+  .app-layout-content {
+    background-color: $sapphire-blue;
+  }
+  .pagination > .disabled > span, .pagination > .disabled > span:hover,
+  .pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+    background-color: darken($sapphire-blue-light, 20%);
+  }
+  .card.postback-templates .card-header+.card-block .row .col-12:before,
+  .card.postback-templates .card-header+.card-block .row .col-12 .card.card-grey.card-rounded {
+    background-color: $sapphire-blue-light!important;
+  }
+  .card.page-title .card-header {
+    border-bottom-color: transparent!important;
+  }
+  .tabs-container .tabs-nav .back-btn,
+  .modal-inner .fancybox-button,
+  .voting__top-right,
+  .telegram__connections,
+  .instructions__aside-title,
+  .instructions__content,
+  .modal-inner__wrap,
+  .instructions__aside-wrap,
+  .pagination > .disabled > span,
+  .news-block__hidden,
+  .news-block__slider,
+  .side-nav li,
+    //.card.page-title .page-title__wrap,
+  .pagination > li > a, .pagination > li > span,
+  .pagination > li:first-child > a, .pagination > li:first-child > span,
+
+  .card:not([class*="bg-"]),
+  .offers-block__overlay,
+  .news-block__item,
+  .offers-block__item,
+  .info-block__item,
+  .site-nav .notifications__listm,
+  .offer-tabs__connect-add-item,
+  .table-white,
+  .side-nav,
+  .site-nav {
+    background-color: $sapphire-blue-light;
+  }
+  .instructions__aside-wrap {
+    background: $sapphire-blue-light;
+  }
+  .offers-block__caption li span,
+  .info-block__select .select2-container--default .select2-selection--single,
+  .site-nav__header .site-nav--button,
+  .menu-item.active,
+  .table tbody,
+  .card-traffic,
+  .menu-item {
+    background-color: transparent;
+  }
+  .offer-tabs-nav,
+  .nav-tabs li:not(.addon) a,
+  .number-label,
+  .offer-graph-empty-wrapper,
+  .offer__card-tariffs-item,
+  .homescreen__close,
+  .finance-modal__content--txt,
+  .tabs-container .tabs-nav--justified .nav-tabs li a,
+  .nav-tabs li:not(.addon) a, .number-label, .homescreen__close, .reaction-btn, .button.button-inline, .instructions__item-answer ol li:before, .site-nav--notifications-btn,
+  .reaction-btn,
+  .bank-details--edit .alert.alert-new,
+  .button.button-icon-inline .button-icon-inline--img,
+  .button.button-inline,
+  .instructions__item-answer ol li:before,
+  .site-nav--notifications-btn {
+    background-color: $grayish-purple-blue;
+  }
+  .info-item .info-item-delimiter {
+    background-color: $cobalt-blue;
+  }
+  .offers-block__img,
+  .site-nav__header .site-nav--button__menu span {
+    background-color: #FFF;
+  }
+  .homescreen {
+    background: linear-gradient(180deg, $sapphire-blue-light 0, $sapphire-blue-light 31.02%, $sapphire-blue-light 66.15%, $sapphire-blue-light 80.06%, $sapphire-blue-light 100%);
+  }
+
+  .site-nav__footer .site-nav--button {
+    background-color: $sapphire-blue;
+  }
+  .simplebar-scrollbar:before,
+  .news-block__scroll .simplebar-scrollbar::before {
+    background-color: $grayish-purple-blue;
+  }
+
+  .cabinet-page--nav .nav-tabs li {
+    float: none;
+  }
+  // borders
+  .offer__card-content-right:before,
+  .info-item .info-item-delimiter,
+  .offer-inner__top-right:before {
+    background: $cobalt-blue;;
+  }
+  .page-title--finance__info .info-item.one-line.row-flex,
+  .page-title--finance__info,
+  .card-row>.payment-option+.payment-option,
+  .card-row,
+  .card-header,
+  .table-responsive,
+  .table > tbody > tr > td,
+  .offer-inner__top-left,
+  .offer__card-content .text-info-item,
+  .offers__card-hints,
+  .cabinet-page--nav .nav-tabs li+li,
+  .tutorial__item,
+  .utm-block,
+  .card.table-block .card-block+.card-block,
+  .tabs-container .tabs-nav--justified .nav-tabs,
+  .page-inner>.card .card,
+  .b-b,
+  pre.dark,
+  .card.table-block .table-block__info .row>*+*,
+  .modal-inner .card-header,
+  .button.button-icon-inline .button-icon-inline--img,
+  .tabs-container .tabs-nav--justified .nav-tabs li,
+  .nav-tabs li:not(.addon) a, .number-label, .homescreen__close, .reaction-btn, .button.button-inline, .instructions__item-answer ol li:before, .site-nav--notifications-btn,
+  .side-nav li,
+  .table thead tr,
+  .table tbody tr,
+  .instructions__aside-wrap ul li,
+  .instructions__item-question,
+  .instructions__aside-wrap ul > * + *,
+  .offers-block__wrap,
+  .news-block__item:last-child .news-block__heading,
+  .news-block__hidden,
+  .news-block__front,
+  .news-block__card-link,
+  .offer-tabs__info-item-title,
+  .offer-tabs__info-item-icon,
+  .offers-block__footer,
+  .info-block__chart,
+  .site-nav__balance,
+  .button.button-inline,
+  .reaction-btn,
+  .site-nav__header {
+    border-color: $cobalt-blue!important;
+  }
+
+
+  // colors
+  .site-nav--notifications-btn i {
+    color: $dark-yellow-green;
+  }
+  .telegram__title,
+  .number-label,
+  .nav-tabs > li:not(.addon).active > a,
+  .nav-tabs > li.active > a,
+  .offers-block__price,
+  .news-block__subtitle,
+  .news-block__name,
+  .news-block__title,
+  .offer__card-content-right-title,
+  .offers-block__footer,
+  .offers-block__caption li.active,
+  .info-block__title span,
+  .info-block__price,
+  .info-block__title,
+  .homescreen__close,
+  .homescreen__greeting,
+  .offers-block__title,
+  .instructions__item-question,
+  .table-e .table-title,
+  .section-title,
+  .voting__item-rating,
+  .voting__item-link,
+  .telegram__connections-title,
+  .menu-item.active .site-nav--link__text,
+  .site-nav__footer .site-nav--button:not(:hover) .site-nav--button__icon,
+  .site-nav__footer .site-nav--button:not(:hover) .site-nav--button__text,
+  .site-nav__balance .info-text,
+  .site-nav--link:hover .site-nav--link__text,
+  .form-group label,
+  .offer__card-title a,
+  .table-title,
+  .offer__card-tariffs-title,
+  .text-info-item-text,
+  .table-resp-tlg tbody tr td:not(:first-child):before,
+  .table tbody tr td,
+  .table thead tr th,
+  .offer__card-tariffs-item,
+  .telegram-link .telegram-link__text,
+  .telegram-link__text,
+  .modal-inner .fancybox-button,
+  .card-title,
+  div.info-item.one-line span,
+  .side-nav li a.current,
+  .card.table-block .table-block__info .info-item .info-text b i,
+  .info-item.two-line .info-text,
+  .offer-tabs__connect-add-item-left,
+  .table h2, .table, h3, .table h2, .table h6, .table h4, .table h5,
+  .tabs-container .tabs-nav .back-btn .back-btn__txt,
+  .chosen-container .chosen-results li,
+  code,
+  .info-item .info-text,
+  .card.page-title .card-header .card-title,
+  .card-header h1,
+  .card-header h2,
+  .card-header h3,
+  .card-header h4,
+  .card-header h5,
+  .card-header h6,
+  .card.page-title .card-header small,
+  xmp,
+  .bank-details--edit .alert.alert-new .alert-text,
+  .anchor-nav .nav a,
+  .table-check--text,
+  .site-nav__menu > li.current .site-nav--link__text {
+    color: #fff!important;
+  }
+  .table-resp-default tbody tr td:before,
+  .bank-details--edit .alert.alert-new p,
+  .nav-tabs > li > a i,
+  .info-item.two-line .info-label,
+  .side-nav li a,
+  .finance-modal__content--txt,
+  .offer-tabs__info-item-text ul li,
+  .offer-tabs__info-item-text,
+  .offer__card-text,
+  .text-info-item-label,
+  .file-input .file-label--wrap,
+  .css-checkbox,
+  .voting__item-link i,
+  .voting__item-rating i,
+  .tutorial__text p,
+  .instructions__item-answer-content > ul li,
+  .instructions__item-answer p,
+  .card.card-alert .card-block p,
+  .pagination > .disabled > span,
+  .nav-tabs li:not(.addon) a,
+  .file-input .file-label--wrap,
+  .instructions__aside-wrap ul a,
+  .text-muted,
+  .chosen-container-multi .chosen-choices li.search-field input[type="text"],
+  .offers-block__note,
+  .offer-inner__top-wrap-text,
+  .offers-block__info,
+  .news-block__front-txt,
+  .button.button-inline,
+  .news-block__note-text,
+  .offers-block__text,
+  .section-title small,
+  .voting__item-quote,
+  .info-block__note,
+  .help-block,
+  .card-traffic h6,
+  .voting__top-faq-question,
+  .voting__top .section-title small,
+  .instructions__aside-title,
+  .info-block__chart,
+  .list-blue li,
+  .homescreen__text p,
+  .menu-item--list ul li a,
+  .page-preview__bottom .card-block,
+  .dropdown-menu > li > a,
+  .text-gray,
+  .text-block p,
+  .card-traffic,
+  .button.button-inline>*,
+  .list-green ul li,
+  .telegram__connections-item-empty,
+  .offer-tabs__info-traffic-btn button,
+  .nav-tabs li:not(.addon) a, .number-label, .homescreen__close, .reaction-btn, .button.button-inline, .instructions__item-answer ol li:before, .site-nav--notifications-btn,
+  .button.button-icon-inline .button-text,
+  .page-inner>.card .card-block p,
+  .card-rounded .card-block p,
+  .page-inner>.card .card-header small,
+  .finance-status--txt,
+  .site-nav--link__text {
+    color: $habrahabra;
+  }
+  .file-input .file-label--wrap .svg-mask-icon.color-black {
+    background-color: $habrahabra;
+  }
+  .site-nav__balance .ion-ios-arrow-forward,
+  .site-nav__balance .info-label {
+    color: $niagara;
+  }
+
+  .news-block__heading a {
+    color: $cornflower-blue;
+  }
+  .telegram__connections-title:before{
+    background-image: url("/img/telegram/connection-icon-white.svg");
+  }
+  .menu-item.active .menu-item--title:before {
+    background-image: url("/img/site-nav/minus-white.svg");
+  }
+  .menu-item--title:before {
+    background-image: url("/img/site-nav/plus-white.svg");
+  }
+  .offers-block__item {
+    padding-top: 0;
+  }
+  .offers-block__img {
+    border-radius: 3px;
+    height: 103px;
+  }
+
+  .move-link:not(:hover) {
+    background: #7dc855;
+    color: #FFF;
+    border-color: #7dc855;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered,
+  .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: $habrahabra;
+  }
+  .select2-container--default .select2-selection--single {
+    background: #23293D;
+    border: 1px solid #464D64;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #85C84D  transparent transparent transparent;
+  }
+  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #85C84D transparent;
+  }
+  .select2-container .select2-dropdown {
+    border-color: #464D64;;
+  }
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    border-color: #464D64;
+    background: #23293D;
+  }
+  .select2-container .select2-dropdown {
+    background: #23293D;
+  }
+
+  .nice-select {
+    color: #90A1BB;
+    background: #23293D;
+    border: 1px solid #464D64;
+    .current {
+      color: #90A1BB;
+    }
+    .list {
+      color: #90A1BB;
+      background: #23293D;
+    }
+  }
+  .nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
+    background-color: $sapphire-blue-light;
+  }
+
+  .tags-wrap span, .tags-wrap a {
+    background-color: $grayish-purple-blue;
+    color: #FFF;
+    border-color: $grayish-purple-blue;;
+  }
+  .offer-tabs-btn,
+  .offer-tabs-nav  {
+    background: $grayish-purple-blue!important;
+  }
+  .offer-tabs-btn>span {
+    color: #FFF;
+  }
+
+  .offer-tabs-nav,
+  .offer-tabs-nav>*+* {
+    border-color: $cobalt-blue;
+  }
+
+  .table.table-offers .js-table-sections-header>tr td {
+    background: #3a4055!important;
+  }
+  .input-muted + .addon-transparent {
+    border-color: #464D64;
+    background-color: #23293D;
+  }
+    .input-group-addon.addon-transparent .btn {
+    background-color: #7dc855;
+    border-color: #7dc855;
+    color: #FFF;
+  }
+  .select2-container--default .select2-search--inline .select2-search__field:placeholder {
+    color: #90A1BB;
+  }
+  .select2-container .select2-dropdown {
+    background-color: #23293D;
+    border-color: #464D64;
+  }
+  .select2-results__option {
+    color: #90A1BB;
+  }
+  .select2-container--default .select2-search--inline .select2-search__field,
+  .select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
+    background-color: #23293D;
+    border-color: #464D64;
+    color: #90A1BB;
+  }
+  .datepickers-container {
+    .datepicker--pointer {
+      border-color:  $cobalt-blue;
+      background-color: #23293D;
+    }
+    .datepicker {
+      border-color:  $cobalt-blue;
+    }
+    .datepicker--nav-action {
+      border-color:  $cobalt-blue;
+      background-color: $grayish-purple-blue;
+    }
+    .datepicker--nav {
+      border-color:  $cobalt-blue;
+      background-color: #23293D;
+    }
+    .datepicker--nav-action path {
+      stroke: #FFF;
+    }
+    .datepicker--nav-title,
+    .datepicker--nav-title i {
+      background-color: transparent;
+      color: #FFF;
+    }
+
+    .datepicker--content {
+      border-color:  $cobalt-blue;
+      background-color: #23293D;
+
+    }
+  }
+  .table-check--checkmark {
+    background: #23293D;
+    border: 1px solid #464D64;
+  }
+  .card.card-light-orange {
+    background-color: #E7F5E3;
+    color: #626262;
+    .card-header  {
+      .card-title,
+      h1, h2, h3, h4, h5, h6 {
+        color: #626262!important;
+      }
+    }
+    .card-block p {
+      color: #626262!important;
+    }
+
+  }
+
+  .card-grey {
+    background-color: $grayish-purple-blue!important;
+  }
+  .nav > li > a:hover {
+    background-color: $grayish-purple-blue
+  }
+  .page-inner__sort-btn {
+    border-color: $blue;
+    color: $blue;
+  }
+  .landing-check__wrap {
+    border-color: $cobalt-blue;
+  }
+  .landing-check input:checked~.landing-check__wrap {
+    border-color: #74c85d;
+  }
+  .landing-check__txt {
+    color: #FFF;
+  }
+  .table-link {
+    color: $blue;
+  }
+
+  .alert {
+    background-color: $grayish-purple-blue;
+    border-right-color: $grayish-purple-blue;
+    border-top-color: $grayish-purple-blue;
+    border-bottom-color: $grayish-purple-blue;
+    color: $habrahabra;
+    button.close {
+      opacity: 1;
+      text-shadow: none;
+      color: #FFF;
+    }
+  }
+  .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+    color: #d9534f!important;
+  }
+  .button-text-large {
+    color: #FFF;
+  }
+  .text-dashed {
+    border-bottom: 1px dashed rgba(#FFF, 0.5);
+  }
+  .input-group-addon.addon-transparent {
+    background-color: #3a4055;
+    border-color: #464D64;
+    color: $habrahabra;
+  }
+}
+
+@media (max-width: 1199px) {
+  .page-inner .card.page-title {
+    border-color: $grayish-purple-blue;
+  }
+}
+@media (min-width: 768px) {
+  .instructions__aside {
+    position: relative;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      position: absolute;
+      background-color: $cobalt-blue;
+    }
+  }
+  .instructions__aside-wrap ul a.active {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card.cabinet-page--nav{
+    border-right: 1px solid $cobalt-blue;
+  }
+}
+@media (max-width: 767px) {
+  .offer-tabs-btn  {
+    background: $grayish-purple-blue!important;
+    border-top: 1px solid $cobalt-blue;
+    border-left: none;
+  }
+}
+

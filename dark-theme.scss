@@ -19,6 +19,20 @@ html body {
   .finance-modal__content--txt {
 
   }
+  .card.bank-details__item>.card-block {
+    background: $sapphire-blue-light;;
+  }
+
+  //.card.card-print .row-flex .card {
+  .card.card-print:not([class*="bg-"]) {
+    background-color: $grayish-purple-blue;
+  }
+  .referral__content,
+  .referral__left-lower,
+  .referral__right,
+  .back-btn,
+  .support__comment,
+  .support__top,
   .finance-modal {
     background-color: $sapphire-blue-light;
   }
@@ -60,6 +74,7 @@ html body {
     color: #FFF;
     &::placeholder {
       color: $habrahabra;
+      opacity: 1;
     }
   }
   .chosen-container-single .chosen-single span {
@@ -194,11 +209,14 @@ html body {
     float: none;
   }
   // borders
+  .referral__info>*+:before,
   .offer__card-content-right:before,
   .info-item .info-item-delimiter,
   .offer-inner__top-right:before {
     background: $cobalt-blue;;
   }
+  .card.bank-details__item>.card-block,
+  .support__item,
   .page-title--finance__info .info-item.one-line.row-flex,
   .page-title--finance__info,
   .card-row>.payment-option+.payment-option,
@@ -240,6 +258,7 @@ html body {
   .site-nav__balance,
   .button.button-inline,
   .reaction-btn,
+  .referral__info-item:nth-child(1), .referral__info-item:nth-child(2), .referral__info-item:nth-child(5), .referral__info-item:nth-child(6),
   .site-nav__header {
     border-color: $cobalt-blue!important;
   }
@@ -312,9 +331,18 @@ html body {
   .bank-details--edit .alert.alert-new .alert-text,
   .anchor-nav .nav a,
   .table-check--text,
+  .back-btn,
+  .back-btn__txt,
+  .referral__content-ban>span,
+  .referral__info-item,
+  .title-inner>h4,
+  .referral__info-item-txt,
   .site-nav__menu > li.current .site-nav--link__text {
     color: #fff!important;
   }
+  .title-inner>p,
+  .check-link,
+  .support__item-txt,
   .table-resp-default tbody tr td:before,
   .bank-details--edit .alert.alert-new p,
   .nav-tabs > li > a i,
@@ -373,6 +401,7 @@ html body {
   .card-rounded .card-block p,
   .page-inner>.card .card-header small,
   .finance-status--txt,
+  .modal-inner__buttons-item p,
   .site-nav--link__text {
     color: $habrahabra;
   }

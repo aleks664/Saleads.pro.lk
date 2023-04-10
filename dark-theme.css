@@ -3,6 +3,16 @@ html body {
   color: #90a1bb; }
   html body .finance-modal__col.empty .finance-modal__item .finance-modal__content--txt {
     color: #90a1bb; }
+  html body .card.bank-details__item > .card-block {
+    background: #2b3144; }
+  html body .card.card-print:not([class*="bg-"]) {
+    background-color: #3a4055; }
+  html body .referral__content,
+  html body .referral__left-lower,
+  html body .referral__right,
+  html body .back-btn,
+  html body .support__comment,
+  html body .support__top,
   html body .finance-modal {
     background-color: #2b3144; }
   html body .offer-tabs-btn.active,
@@ -42,7 +52,8 @@ html body {
     html body .telegram-link::placeholder,
     html body .quote::placeholder,
     html body .form-control::placeholder {
-      color: #90a1bb; }
+      color: #90a1bb;
+      opacity: 1; }
   html body .chosen-container-single .chosen-single span {
     color: #90a1bb; }
   html body .quote p,
@@ -143,10 +154,13 @@ html body {
     background-color: #3a4055; }
   html body .cabinet-page--nav .nav-tabs li {
     float: none; }
+  html body .referral__info > * + :before,
   html body .offer__card-content-right:before,
   html body .info-item .info-item-delimiter,
   html body .offer-inner__top-right:before {
     background: #172231; }
+  html body .card.bank-details__item > .card-block,
+  html body .support__item,
   html body .page-title--finance__info .info-item.one-line.row-flex,
   html body .page-title--finance__info,
   html body .card-row > .payment-option + .payment-option,
@@ -188,6 +202,7 @@ html body {
   html body .site-nav__balance,
   html body .button.button-inline,
   html body .reaction-btn,
+  html body .referral__info-item:nth-child(1), html body .referral__info-item:nth-child(2), html body .referral__info-item:nth-child(5), html body .referral__info-item:nth-child(6),
   html body .site-nav__header {
     border-color: #172231 !important; }
   html body .site-nav--notifications-btn i {
@@ -255,8 +270,17 @@ html body {
   html body .bank-details--edit .alert.alert-new .alert-text,
   html body .anchor-nav .nav a,
   html body .table-check--text,
+  html body .back-btn,
+  html body .back-btn__txt,
+  html body .referral__content-ban > span,
+  html body .referral__info-item,
+  html body .title-inner > h4,
+  html body .referral__info-item-txt,
   html body .site-nav__menu > li.current .site-nav--link__text {
     color: #fff !important; }
+  html body .title-inner > p,
+  html body .check-link,
+  html body .support__item-txt,
   html body .table-resp-default tbody tr td:before,
   html body .bank-details--edit .alert.alert-new p,
   html body .nav-tabs > li > a i,
@@ -315,6 +339,7 @@ html body {
   html body .card-rounded .card-block p,
   html body .page-inner > .card .card-header small,
   html body .finance-status--txt,
+  html body .modal-inner__buttons-item p,
   html body .site-nav--link__text {
     color: #90a1bb; }
   html body .file-input .file-label--wrap .svg-mask-icon.color-black {

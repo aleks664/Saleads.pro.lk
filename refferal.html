@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="QzcQTSWYBgLd3n8UWE9nS2L8yGiQGCreyuWidGxt">
 
-    <title>Площадки
+    <title>Реферальная программа
         | Saleads.pro</title>
     <!-- Favicons -->
     <link rel="icon" href="https://saleads.pro/favicon.ico" />
@@ -438,7 +438,7 @@
                         </button>
                         <div class="site-nav__logo">
                             <a href="" class="logo-small"><img src="https://saleads.pro/img/logo-leaf.svg" alt=""></a>
-                            <a href="" class="logo-big"><img src="/img/logo-dark-theme.svg" alt=""></a>
+                            <a href="" class="logo-big"><img src="https://saleads.pro/img/logo-web.svg" alt=""></a>
                         </div>
                         <button type="button" class="site-nav--notifications-btn">
                             <i class="ion-ios-bell fa-2x"></i>
@@ -518,7 +518,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="active current">
+                                <li class="">
                                     <a href="https://saleads.pro/lk/webmaster/stands" class="site-nav--link">
 
                     <span class="site-nav--link__icon">
@@ -537,17 +537,6 @@
                     </span>
                                         <span class="site-nav--link__text">
                         Офферы
-                                            </span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="https://saleads.pro/lk/webmaster/api-traffic/first" class="site-nav--link">
-
-                    <span class="site-nav--link__icon">
-                        <span class="svg-mask-icon" style="width: 15px; mask: url(/img/menu/api-traffic.svg) no-repeat center/contain; -webkit-mask: url(/img/menu/api-traffic.svg) no-repeat center/contain;height: 15px; display: inline-block;"></span>
-                    </span>
-                                        <span class="site-nav--link__text">
-                        ApiTraffic
                                             </span>
                                     </a>
                                 </li>
@@ -637,6 +626,43 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="menu-item ">
+                                        <div class="menu-item--title site-nav--link">
+                                                <span class="site-nav--link__icon">
+                            <span class="svg-mask-icon" style="width: 15px; mask: url(/img/menu/api-traffic.svg) no-repeat center/contain; -webkit-mask: url(/img/menu/api-traffic.svg) no-repeat center/contain;height: 15px; display: inline-block;"></span>
+
+                        </span>
+                                            <span class="site-nav--link__text">
+                            Api трафик
+                                                    </span>
+                                        </div>
+                                        <div class="menu-item--list" style="transition: none 0s ease 0s; display: none;">
+                                            <ul>
+                                                <li class="">
+                                                    <a href="https://saleads.pro/lk/webmaster/api-traffic">
+                                                        <span class="link__text">Единые анкеты</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://saleads.pro/lk/webmaster/api-traffic/by-offers">
+                                                        <span class="link__text">По офферам</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://saleads.pro/lk/webmaster/api-traffic/summary">
+                                                        <span class="link__text">Общая статистика</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://saleads.pro/lk/webmaster/api-traffic/sales">
+                                                        <span class="link__text">Детальный отчет</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li class="">
                                     <a href="https://saleads.pro/lk/webmaster/tools" class="site-nav--link">
 
@@ -686,7 +712,7 @@
                                             </span>
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="active current">
                                     <a href="https://saleads.pro/lk/webmaster/refferal" class="site-nav--link">
 
                     <span class="site-nav--link__icon">
@@ -879,20 +905,181 @@
         <main class="app-layout-content">
 
             <!-- Page Content -->
-            <div class="container-fluid m-y-md" id="stands-app">
-                <vue-stand-index-list></vue-stand-index-list>
+            <div class="container-fluid m-y-md">
+                <section class="referral" id="refferals" v-cloak>
+                    <div class="referral__top">
+                        <div class="referral__left">
+                            <div class="referral__left-upper">
+                                <div class="referral__left-content">
+                                    <div class="referral__left-content-img">
+                                        <img src="https://saleads.pro/img/referral/ref-img.svg" alt="">
+                                    </div>
+                                    <span>Реферальная программа</span>
+                                </div>
+                                <div class="referral__left-link">
+                                    <span>Ваша ссылка для привлечения рефералов:</span>
+                                    <vue-text-copy-btn :field-value="link"></vue-text-copy-btn>
+                                </div>
+                            </div>
+                            <div class="referral__left-lower">
+                                <div class="referral__info">
+                                    <div class="referral__info-item">
+                                        Тариф
+                                        <div class="referral__info-item-txt">
+                                            <span class="icon"><img src="https://saleads.pro/img/referral/info1.svg" alt=""></span>
+                                            <vue-spinner :loading="loading">{{ percent | number }}%</vue-spinner>
+                                        </div>
+                                    </div>
+                                    <div class="referral__info-item">
+                                        Рефералов
+                                        <div class="referral__info-item-txt">
+                                            <span class="icon"><img src="https://saleads.pro/img/referral/info2.svg" alt=""></span>
+                                            <vue-spinner :loading="loading">{{ numRefferals | integer }}</vue-spinner>
+                                        </div>
+                                    </div>
+                                    <div class="referral__info-item">
+                                        Прогноз дохода
+                                        <div class="referral__info-item-txt">
+                                            <span class="icon"><img src="https://saleads.pro/img/referral/info3.svg" alt=""></span>
+                                            <vue-spinner :loading="loading">{{ pending | number }}<span class="hidden-xs"> RUB</span></vue-spinner>
+                                        </div>
+                                    </div>
+                                    <div class="referral__info-item">
+                                        Всего заработано
+                                        <div class="referral__info-item-txt">
+                                            <span class="icon"><img src="https://saleads.pro/img/referral/info4.svg" alt=""></span>
+                                            <vue-spinner :loading="loading">{{ total | number }}<span class="hidden-xs"> RUB</span></vue-spinner>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referral__right">
+                            <div class="graphic-wrap">
+                                <span>Регистрации рефералов:</span>
+                                <div class="graphic-wrap__img">
+                                    <vue-chart-bar :width="250" :height="200" :chart-data="chart.chartData" :options="chart.chartOptions"></vue-chart-bar>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs" data-toggle="tabs">
+                            <li :class="curtab === 'about' ? 'active' : ''">
+                                <a @click.prevent="curtab = 'about'">О реферальной программе</a>
+                            </li>
+                            <li :class="curtab === 'banners' ? 'active' : ''">
+                                <a @click.prevent="curtab = 'banners'">Баннеры</a>
+                            </li>
+                        </ul>
+                        <div class=" tab-content">
+                            <div class="tab-pane" :class="curtab == 'about' ? 'active' : ''" id="tab1">
+                                <div class="referral__content">
+                                    <div class="title-inner">
+                                        <h4>Участие в реферальной программе</h4>
+                                        <p>Приглашайте в партнёрскую сеть Saleads пользователей, ранее не зарегистрированных в сервисе в качестве Веб-мастеров за вознаграждение. Такие пользователи станут вашими рефералами:</p>
+                                    </div>
+                                    <div class="referral__content-block">
+                                        <div class="referral__content-block-item left">
+                                            <div class="referral__content-block-num">
+                                                <img src="https://saleads.pro/img/referral/five.svg" alt="">
+                                                <span><img src="https://saleads.pro/img/referral/percent.svg" alt=""></span>
+                                            </div>
+                                            <div class="referral__content-block-txt">
+                                                <span>От заработка реферала вам</span>
+                                                <p>Вы будете получать 5% течении 1 года от дохода каждого зарегистрированного по вашей ссылке вебмастера</p>
+                                            </div>
+                                            <span class="referral__content-block-item-decor"><img src="https://saleads.pro/img/offers/plus-white.svg" alt=""></span>
+                                        </div>
+                                        <div class="referral__content-block-item right">
+                                            <div class="referral__content-block-num">
+                                                <img src="https://saleads.pro/img/referral/five.svg" alt="">
+                                                <span><img src="https://saleads.pro/img/referral/percent.svg" alt=""></span>
+                                            </div>
+                                            <div class="referral__content-block-txt">
+                                                <span>Бонусы для реферала на первую выплату</span>
+                                                <p>Каждый зарегистрированный по вашей ссылке вебмастер получит бонус +5% от суммы первой выплаты, чем большую сумму он накопит на вывод в первый раз, тем более значимую сумму получит бонусом.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="referral__content-ban">
+                                        <span>Запрещено:</span>
+                                        <div class="offer-tabs__info-traffic-wrap">
+                                            <div class="card card-traffic red">
+                                                <h6>рассылать рассылки от лица Saleads по email, через мессенджеры и любым другим способом</h6>
+                                            </div>
+                                            <div class="card card-traffic red">
+                                                <h6>регистрировать аккаунты, по собственной реферальной ссылке Веб-мастера</h6>
+                                            </div>
+                                            <div class="card card-traffic red">
+                                                <h6>размещать платную рекламу с реферальной ссылкой по брендовым запросам Saleads</h6>
+                                            </div>
+                                            <div class="card card-traffic red">
+                                                <h6>использовать незаконные способы привлечения в т.ч. искусственные накрутки количества Рефералов</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane"  :class="curtab == 'banners' ? 'active' : ''" id="tab2">
+                                <div id="offerBanners" class="tab-pane active">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div v-if="banners" class="row">
+                                                <div v-for="banner in banners" class="col-sm-6 col-lg-3">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <p class="small text-muted">{{ banner.name }}</p>
+                                                        </div>
+                                                        <div
+                                                                class="card-block text-center bg-img banner-link"
+                                                                :style="'background-image: url(\'' + banner.imagePath + '\'); background-size: contain;'">
+                                                            <p>&nbsp;</p>
+                                                            <p>&nbsp;</p>
+                                                            <p>&nbsp;</p>
+                                                            <p>&nbsp;</p>
+                                                            <p>&nbsp;</p>
+                                                            <p>&nbsp;</p>
+
+                                                        </div>
+                                                        <div class="card-block text-center">
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <vue-text-copy-btn :field-value="'&lt;a target=&quot;blank&quot; href=&quot;'+ link + '&quot;&gt;&lt;img src=&quot;' + banner.imageLinkWithType + '&quot;/&gt;&lt;/a&gt;'"></vue-text-copy-btn>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-6 b-r">
+                                                                    <small class="text-muted">{{ banner.width }}x{{ banner.height }}</small>
+                                                                </div>
+                                                                <div class="col-xs-6">
+                                                                    <small class="text-muted">{{ banner.path.split('.')[1] }}</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <br>
-                <br>
-                <br>
-                <br>
-                <section class="page-inner"><div class="card page-title page-title--platforms"><div class="page-title__wrap"><div class="card-header"><h2 class="card-title">Площадки</h2></div> <div class="w-xs-100"> <button type="submit" class="complex-button"><div class="complex-button-wrapper flex"><span class="complex-button-inner-left"><span class="complex-button-icon"><i class="fa fa-plus fa-1-5x"></i></span></span> <span class="complex-button-text">Создать площадку</span></div></button> <!----></div></div></div> <div class="tabs-container"><ul data-toggle="tabs" class="nav nav-tabs"><li class="active"><a>Активные</a></li> <li class=""><a>Архивные</a></li></ul> <div class=" tab-content"><div class="tab-pane active"><div class="table-wrap"><table class="table js-table-sections table-white platforms-table"><thead class="hidden-xs"><tr><th>Площадка</th> <th>Ссылка</th> <th>Тип трафика</th> <th></th></tr></thead> <tbody class="table--static"><tr class="tr-tall"><td width="40%" class="clickable"><div class="table-title table-title__sign"><span class="table-title__sign--img disabled"></span> <h6 class="text-gray">test</h6> <small>testtest test test</small></div></td> <td data-label="Ссылка">https://vk.com/myawesomeblog_1</td> <td data-label="Тип трафика">Таргетированная реклама</td> <td><div class="button-group"><div> <button type="button" class="button button-inline button-default button-outline"><span class="button-icon"><i class="ion-edit fa-2x"></i></span></button> <!----></div></div></td></tr></tbody></table> <!----></div></div> <!----></div></div></section>
+                <section id="refferals" class="referral"><div class="referral__top"><div class="referral__left"><div class="referral__left-upper"><div class="referral__left-content"><div class="referral__left-content-img"><img src="/img/referral/ref-img.svg" alt=""></div> <span>Реферальная программа</span></div> <div class="referral__left-link"><span>Ваша ссылка для привлечения рефералов:</span> <div class="form-group"> <!----> <div class="input-group"><!----> <input id="E4MTc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="referral__left-lower"><div class="referral__info"><div class="referral__info-item">
+                    Тариф
+                    <div class="referral__info-item-txt"><span class="icon"><img src="/img/referral/info1.svg" alt=""></span> <span>5,00%</span></div></div> <div class="referral__info-item">
+                    Рефералов
+                    <div class="referral__info-item-txt"><span class="icon"><img src="/img/referral/info2.svg" alt=""></span> <span>0</span></div></div> <div class="referral__info-item">
+                    Прогноз дохода
+                    <div class="referral__info-item-txt"><span class="icon"><img src="/img/referral/info3.svg" alt=""></span> <span>0<span class="hidden-xs"> RUB</span></span></div></div> <div class="referral__info-item">
+                    Всего заработано
+                    <div class="referral__info-item-txt"><span class="icon"><img src="/img/referral/info4.svg" alt=""></span> <span>0<span class="hidden-xs"> RUB</span></span></div></div></div></div></div> <div class="referral__right"><div class="graphic-wrap"><span>Регистрации рефералов:</span> <div class="graphic-wrap__img"><div class=""><canvas id="bar-chart" width="250" height="200" style="display: block;"></canvas></div></div></div></div></div> <div class="tabs-container"><ul data-toggle="tabs" class="nav nav-tabs"><li class=""><a>О реферальной программе</a></li> <li class="active"><a>Баннеры</a></li></ul> <div class=" tab-content"><div id="tab1" class="tab-pane"><div class="referral__content"><div class="title-inner"><h4>Участие в реферальной программе</h4> <p>Приглашайте в партнёрскую сеть Saleads пользователей, ранее не зарегистрированных в сервисе в качестве Веб-мастеров за вознаграждение. Такие пользователи станут вашими рефералами:</p></div> <div class="referral__content-block"><div class="referral__content-block-item left"><div class="referral__content-block-num"><img src="/img/referral/five.svg" alt=""> <span><img src="/img/referral/percent.svg" alt=""></span></div> <div class="referral__content-block-txt"><span>От заработка реферала вам</span> <p>Вы будете получать 5% течении 1 года от дохода каждого зарегистрированного по вашей ссылке вебмастера</p></div> <span class="referral__content-block-item-decor"><img src="/img/offers/plus-white.svg" alt=""></span></div> <div class="referral__content-block-item right"><div class="referral__content-block-num"><img src="/img/referral/five.svg" alt=""> <span><img src="/img/referral/percent.svg" alt=""></span></div> <div class="referral__content-block-txt"><span>Бонусы для реферала на первую выплату</span> <p>Каждый зарегистрированный по вашей ссылке вебмастер получит бонус +5% от суммы первой выплаты, чем большую сумму он накопит на вывод в первый раз, тем более значимую сумму получит бонусом.</p></div></div></div> <div class="referral__content-ban"><span>Запрещено:</span> <div class="offer-tabs__info-traffic-wrap"><div class="card card-traffic red"><h6>рассылать рассылки от лица Saleads по email, через мессенджеры и любым другим способом</h6></div> <div class="card card-traffic red"><h6>регистрировать аккаунты, по собственной реферальной ссылке Веб-мастера</h6></div> <div class="card card-traffic red"><h6>размещать платную рекламу с реферальной ссылкой по брендовым запросам Saleads</h6></div> <div class="card card-traffic red"><h6>использовать незаконные способы привлечения в т.ч. искусственные накрутки количества Рефералов</h6></div></div></div></div></div> <div id="tab2" class="tab-pane active"><div id="offerBanners" class="tab-pane active"><div class="row"><div class="col-xs-12"><div class="row"><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4594.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="cyMDY" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1500x1500</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4593.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="Y5OTU" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1500x1500</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4592.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="QwNzc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1080x607</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4591.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="E2MDk" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1080x607</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4590.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="E4OTg" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1000x120</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4589.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="A1MDE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">1000x120</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4588.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="EyODg" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">970x250</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4587.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="kzNTY" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">970x250</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4586.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="QzMDQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">960x640</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4585.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="k5NjI" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">960x640</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4584.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="UyNjQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">728x90</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4583.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="M4Mjc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">728x90</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4582.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="g0MTk" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x960</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4581.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="EzMDA" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x960</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4580.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="M4MzY" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x200</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4579.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="A4NTA" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x200</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4578.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="k2MTE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x100</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4577.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="c4ODQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">640x100</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4576.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="U4MDU" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">480x320</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4575.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="Q4NjI" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">480x320</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4574.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="Y3Nzc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">336x280</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4573.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="QwOTY" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">336x280</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4572.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="Y2MTE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">320x480</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4571.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="I4ODY" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">320x480</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4570.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="QzMDE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">320x50</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4569.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="AxMzc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">320x50</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4568.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="U4MTc" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x600</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4567.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="AyNDg" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x600</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4566.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="A1MDM" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x500</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4565.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="EyMjg" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x500</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4564.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="k5NDE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x300</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4563.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="gxNjA" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x300</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4562.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="AwNTU" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x250</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4561.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="M5MzA" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">300x250</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4560.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="g3ODQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">240x600</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4559.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="M4MTI" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">240x600</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Saleads.pro</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4558.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="g5OTQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">240x400</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div><div class="col-sm-6 col-lg-3"><div class="card"><div class="card-header"><p class="small text-muted">Бонус + 5%</p></div> <div class="card-block text-center bg-img banner-link" style="background-image: url(&quot;https://saleads.pro/storage/banners/1249/4557.jpeg&quot;); background-size: contain;"><p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p></div> <div class="card-block text-center"><div class="row"><div class="col-xs-12"><div class="form-group"> <!----> <div class="input-group"><!----> <input id="E0ODE" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></div></div> <div class="row"><div class="col-xs-6 b-r"><small class="text-muted">240x400</small></div> <div class="col-xs-6"><small class="text-muted">jpeg</small></div></div></div></div></div></div></div></div></div></div></div></div></section>
             </div>
 
-
-            <br>
-            <br>
-            <br>
-            <div id="stands-app" class="container-fluid m-y-md"><div><section class="page-inner"><div class="card page-title page-title--platforms"><div class="page-title__wrap"><div class="card-header"><h2 class="card-title">Площадки</h2></div> <div class="w-xs-100"> <button type="submit" class="complex-button"><div class="complex-button-wrapper flex"><span class="complex-button-inner-left"><span class="complex-button-icon"><i class="fa fa-plus fa-1-5x"></i></span></span> <span class="complex-button-text">Создать площадку</span></div></button> <!----></div></div></div> <div class="tabs-container"><ul data-toggle="tabs" class="nav nav-tabs"><li class="active"><a>Активные</a></li> <li class=""><a>Архивные</a></li></ul> <div class=" tab-content"><div class="tab-pane active"><div class="table-wrap"><table class="table js-table-sections table-white platforms-table"><thead class="hidden-xs"><tr><th>Площадка</th> <th>Ссылка</th> <th>Тип трафика</th> <th></th></tr></thead> <tbody class="js-table-sections-header open"><tr class="tr-tall"><td width="40%" class="clickable"><div class="table-title table-title__sign"><span class="table-title__sign--img"></span> <h6 class="text-gray">test</h6> <small>testtest test test</small></div></td> <td data-label="Ссылка">https://vk.com/myawesomeblog_1</td> <td data-label="Тип трафика">Таргетированная реклама</td> <td><div class="button-group"><!----> <a title="Архивировать" class="button button-inline button-default button-outline"><span class="button-icon"><i class="ion-ios-filing-outline fa-2x"></i></span></a> <!----></div></td></tr></tbody> <tbody><tr class="js-table-sections--thead"><td width="40%">Подключеный оффер</td> <td colspan="2" data-label="Ссылка">Ссылка</td> <td data-label="Статус" class="text-right">Статус</td></tr> <tr><td colspan="1"><div class="table-title table-title--icon"><span class="table-title--img"><!----> <!----> <i class="fa fa-check text-green"></i> <!----></span> <h6>Кредистория (Регистрация нового пользователя)</h6> <!----></div></td> <td colspan="2"><div class="form-group w-100 input-group--small m-y-0"> <!----> <div class="input-group"><!----> <input id="M2NDQ" list="" type="text" class="form-control text-to-copy input-muted"> <!----> <span class="input-group-addon addon-transparent"><div class="flex" style="flex-direction: row;"> <button type="button" class="btn btn-default btn-hover-app">Копировать</button> </div></span></div> <!----> <!----> <div class="clearfix"></div></div></td> <td data-label="Статус" class="text-right"><!----> <!----> <span class="label label-green">подключено</span> <!----></td></tr></tbody></table> <!----></div></div> <!----></div></div></section></div></div>
 
             <!-- .container-fluid -->
             <!-- End Page Content -->
@@ -916,32 +1103,154 @@
 <script src="https://saleads.pro/js/plugins/underscore/underscore-min.js"></script>
 <script src="https://saleads.pro/js/app.js?1638446864"></script>
 <!-- COMPONENTS -->
-<link href="https://saleads.pro/components/vue.loading.block.css?1625723331" rel="stylesheet" />
-<script src="https://saleads.pro/components/vue.loading.block.js?1625723331"></script>
+<script src="https://saleads.pro/js/plugins/Chart.min.js?1667460267"></script>
+<script src="https://saleads.pro/js/plugins/vue-chartjs.min.js?1627831790"></script>
+<script src="https://saleads.pro/components/vue.chart.line.js?1625723331"></script>
+<script src="https://saleads.pro/components/vue.webmaster.tag.js?1625723331"></script>
+<script src="https://saleads.pro/components/vue.webmaster.tag.point.js?1625723331"></script>
+</script>
 <script src="https://saleads.pro/components/vue.text.copy.btn.js?1625723331"></script>
-<script src="https://saleads.pro/components/vue.textarea.js?1625723331"></script>
+<script src="https://saleads.pro/js/plugins/Chart.min.js?1667460267"></script>
+<script src="https://saleads.pro/js/plugins/vue-chartjs.min.js?1627831790"></script>
+<script src="https://saleads.pro/components/vue.chat.bar.js?1625723331"></script>
+<script src="https://saleads.pro/components/vue.spinner.js?1625723331"></script>
+<script>
+    const vueUserLinkRoutes = {
+        view: 'https://saleads.pro/admin/manage/users/%',
+        clicks: 'https://saleads.pro/admin/stat/clicks',
+        entrances: 'https://saleads.pro/admin/manage/users/%/entrances',
+        impersonate: 'https://saleads.pro/admin/manage/impersonate/%/start',
+        getInfo: 'https://saleads.pro/admin/manage/users/%/get-info',
+        getInfoByEmail: 'https://saleads.pro/admin/manage/users/get-info-by-email',
+        money: 'https://saleads.pro/admin/stat/new/money-by-webmaster',
+        moneyByOffer: 'https://saleads.pro/admin/stat/new/money-by-offer',
+        clicksByOffer: 'https://saleads.pro/admin/stat/new/clicks',
+        webmasterTransactions: 'https://saleads.pro/admin/manage/users/%/transactions',
+    }
+    const vueUserLinkPermissions = {
+        canView: false,
+        canAccessStats: false,
+        canImpersonate: false,
+    }
+</script>
+<script src="https://saleads.pro/components/vue.user.link.js?1673863375"></script>
+<script src="https://saleads.pro/components/vue.pager.js?1625723331"></script>
 <script src="https://saleads.pro/components/vue.text.js?1625723331"></script>
 <!-- END COMPONENTS -->
 <!-- SCRIPTS -->
+<script src="https://saleads.pro/components/vue.modal.js?1625723331"></script>
 <!-- END SCRIPTS -->
 <!-- SCRIPTS SECTION -->
-<script src="https://saleads.pro/js/plugins/jquery-fancybox/jquery.fancybox.min.js?1587734327"></script>
-<script src="https://saleads.pro/components/vue.complex.button.js?1625723331"></script>
-<script src="https://saleads.pro/components/vue.select2.js?1676619020"></script>
-<script src="https://saleads.pro/components/vue.modal.modern.js?1625723331"></script>
-<script src="https://saleads.pro/components/vue.pager.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-index-empty.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-index-list.js?1647524656"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-list-rows.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-list-connector.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-list-connectors.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-create-modal.js?1625723331"></script>
-<script src="https://saleads.pro/components/webmaster/stand/vue-stand-edit-modal.js?1625723331"></script>
+
 <script>
     new Vue({
-        el: '#stands-app',
+        el: '#refferals',
         mixins: [routable],
-    })
+        data: {
+            routes: {
+                index: 'https://saleads.pro/lk/webmaster/refferal/ajax',
+            },
+            curtab: 'about',
+            loading: true,
+
+            link: null,
+            numRefferals: null,
+            percent: null,
+            total: null,
+            pending: null,
+            intervals: [],
+            refferalsChartData: [],
+
+            banners: [],
+            banner: null,
+
+        },
+        methods: {
+            load: function(loading=false){
+                axios.get(this.route('index')).then( response => {
+                    this.link = response.data.link;
+                    this.numRefferals = response.data.numRefferals;
+                    this.percent = response.data.percent;
+                    this.total = response.data.total;
+                    this.pending = response.data.pending;
+                    this.banners = response.data.banners;
+                    this.intervals = response.data.intervals;
+                    this.refferalsChartData = response.data.refferalsChartData;
+                }).catch(()=>{}).then( () => {
+                    this.loading = false;
+                });
+            },
+        },
+        mounted: function(){
+            this.load(true);
+        },
+        computed: {
+            chartOptions: function(){
+                return {
+                    scaleFontFamily: 'Roboto, Arial, sans-serif',
+                    scaleFontColor: App.colors.text_muted,
+                    scaleFontStyle: '500',
+                    tooltipTitleFontFamily: 'Roboto, Arial, sans-serif',
+                    tooltipCornerRadius: 2,
+                    maintainAspectRatio: false,
+                    legend: null,
+                    bezierCurve: false,
+                    responsive: false,
+                    animation: false,
+                    scales: {
+                        yAxes: [{
+                            stacked: false,
+                            ticks: {
+                                min: 0,
+                                suggestedMax: 10,
+                            }
+                        }],
+                        xAxes: [{
+                            stacked: false
+                        }]
+                    },
+                };
+            },
+            chart: function(){
+                if (!this.refferalsChartData) return null;
+                let datas = JSON.parse(JSON.stringify(this.refferalsChartData));
+                let data = {};
+                _.each(this.intervals, (date) => {
+                    data[date] = 0;
+                    // data[date] = Math.round(Math.random()*100);
+
+                });
+                _.each(datas, (row) => {
+                    data[row.date] = row.num;
+                })
+                let dsName = 'Регистрации';
+                dataset = {
+                    data: Object.values(data),
+                    backgroundColor: hsla5color(dsName, 100),
+                    borderColor: hsla5color(dsName, 100),
+                    borderWidth: 1,
+                    pointStrokeColor: hsla5color(dsName, 100),
+                    hidden: false,
+                    label: dsName,
+                };
+
+                // if (ds[0] === undefined) return {
+                //     chartData: {
+                //         labels: [],
+                //         datasets: [],
+                //     },
+                //     chartOptions: this.chartOptions,
+                // };
+                return {
+                    chartData: {
+                        labels: this.intervals,
+                        datasets: [dataset]
+                    },
+                    chartOptions: this.chartOptions,
+                }
+            }
+        }
+    });
 </script>
 <!-- END SCRIPTS SECTION -->
 <!-- Yandex.Metrika counter -->
